@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter SaaS Marketing`,
-    description: `A simple one page marketing starter for saas companies.`,
-    author: `Keegan Burkett`,
+    title: `Eva Astrological Assistant`,
+    description: `Eva can help you plan your week according to astrological principles`,
+    author: `Shawn Lauzon`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
