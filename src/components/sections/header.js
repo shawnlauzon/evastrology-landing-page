@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { graphql, useStaticQuery, Link } from "gatsby"
+import { graphql, useStaticQuery/*, Link*/ } from "gatsby"
 import Img from "gatsby-image"
 
 import { Container } from "../global"
@@ -29,7 +29,7 @@ const Header = () => {
           <HeaderTextGroup>
             <Subtitle>Astrology</Subtitle>
             <h1>
-              Say hi to Eva,<br/>
+              Say hi to Eva,<br />
               your personal astrological assistant
             </h1>
             <h2>
@@ -37,12 +37,26 @@ const Header = () => {
             </h2>
             <h3>Simply choosing the best time for an action can make a huge difference.</h3>
 
-            <h2>Eva will arrive in July 2020.</h2>            
-            <HeaderForm onSubmit={handleSubmit}>
-              <HeaderInputName placeholder="Your first name" /><br/>
-              <HeaderInputEmail placeholder="Your email" />
+            <h2>Eva will arrive in July 2020.</h2>
+            <HeaderForm
+              name="early-access"
+              method="post"
+              data-netlify-honeypot="bot-field"
+              data-netlify="true"
+            >
+              <input type="hidden" name="bot-field" />
+              <input type="hidden" name="form-name" value="early-access" />
+              <HeaderInputName placeholder="Your first name" /><br />
+              <HeaderInputEmail
+                type="email"
+                placeholder="Your email"
+                name="email"
+                id="email"
+                required
+              />
               <HeaderButton>Early access</HeaderButton>
             </HeaderForm>
+
             {/* <FormSubtitle>
               Already have a beta account?{" "}
               <FormSubtitleLink to="/">Sign in</FormSubtitleLink>
