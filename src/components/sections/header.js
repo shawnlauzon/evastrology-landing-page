@@ -8,7 +8,7 @@ import { Container } from "../global"
 const Header = () => {
   const data = useStaticQuery(graphql`
     query {
-      file(sourceInstanceName: { eq: "product" }, name: { eq: "green-skew" }) {
+      file(sourceInstanceName: { eq: "product" }, name: { eq: "fortune-teller-cropped" }) {
         childImageSharp {
           fluid(maxWidth: 1000) {
             ...GatsbyImageSharpFluid_tracedSVG
@@ -27,24 +27,26 @@ const Header = () => {
       <Container>
         <Flex>
           <HeaderTextGroup>
-            <Subtitle>Personal Finance</Subtitle>
+            <Subtitle>Astrology</Subtitle>
             <h1>
-              All your money,
-              <br />
-              one account
+              Say hi to Eva,<br/>
+              your personal astrological assistant
             </h1>
             <h2>
-              We're building next generation personal finance tools. Sign up to
-              get early access.
+              Eva can help you plan your week according to astrological principles.
             </h2>
+            <h3>Simply choosing the best time for an action can make a huge difference.</h3>
+
+            <h2>Eva will arrive in July 2020.</h2>            
             <HeaderForm onSubmit={handleSubmit}>
-              <HeaderInput placeholder="Your email" />
+              <HeaderInputName placeholder="Your first name" /><br/>
+              <HeaderInputEmail placeholder="Your email" />
               <HeaderButton>Early access</HeaderButton>
             </HeaderForm>
-            <FormSubtitle>
+            {/* <FormSubtitle>
               Already have a beta account?{" "}
               <FormSubtitleLink to="/">Sign in</FormSubtitleLink>
-            </FormSubtitle>
+            </FormSubtitle> */}
           </HeaderTextGroup>
           <ImageWrapper>
             <StyledImage fluid={data.file.childImageSharp.fluid} />
@@ -59,7 +61,7 @@ const Header = () => {
 export default Header
 
 const HeaderWrapper = styled.header`
-  background-color: #f8f8f8;
+  background-color: #e5f8fb;
   padding: 160px 0 80px 0;
   position: relative;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 5vw));
@@ -95,6 +97,10 @@ const HeaderTextGroup = styled.div`
     ${props => props.theme.font_size.regular}
   }
 
+  h3 {
+    ${props => props.theme.font_size.xsmall}
+  }  
+
   p {
     margin-bottom: 48px;
   }
@@ -121,24 +127,51 @@ const HeaderForm = styled.form`
   }
 `
 
-const FormSubtitle = styled.span`
-  ${props => props.theme.font_size.xxsmall}
-`
+// const FormSubtitle = styled.span`
+//   ${props => props.theme.font_size.xxsmall}
+// `
 
-const FormSubtitleLink = styled(Link)`
-  color: ${props => props.theme.color.secondary};
-  padding-bottom: 1px;
-  margin-left: 8px;
-  text-decoration: none;
-  border-bottom: 1px solid ${props => props.theme.color.secondary};
-`
+// const FormSubtitleLink = styled(Link)`
+//   color: ${props => props.theme.color.secondary};
+//   padding-bottom: 1px;
+//   margin-left: 8px;
+//   text-decoration: none;
+//   border-bottom: 1px solid ${props => props.theme.color.secondary};
+// `
 
-const HeaderInput = styled.input`
+const HeaderInputName = styled.input`
   font-weight: 500;
   font-size: 16px;
   color: ${props => props.theme.color.primary};
   line-height: 42px;
-  width: 100%;
+  width: 70%;
+  text-align: left;
+  height: 60px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: ${props => props.theme.color.secondary};
+  border-image: initial;
+  border-radius: 4px;
+  padding: 8px 16px;
+  outline: 0px;
+  &:focus {
+    box-shadow: inset ${props => props.theme.color.secondary} 0px 0px 0px 2px;
+  }
+  @media (max-width: ${props => props.theme.screen.md}) {
+    margin-bottom: 8px;
+  }
+  @media (max-width: ${props => props.theme.screen.sm}) {
+    display: block;
+    width: 100%;
+  }
+`
+
+const HeaderInputEmail = styled.input`
+  font-weight: 500;
+  font-size: 16px;
+  color: ${props => props.theme.color.primary};
+  line-height: 42px;
+  width: 130%;
   text-align: left;
   height: 60px;
   border-width: 1px;
