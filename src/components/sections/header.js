@@ -35,7 +35,7 @@ const Header = () => {
             <h2>
               Eva can help you plan your week according to astrological principles.
             </h2>
-            <h3>Simply choosing the best time for an action can make a huge difference.</h3>
+            <h3>Stop procrastinating and start doing.</h3>
 
             <h2>Eva will arrive in July 2020.</h2>
             <HeaderForm
