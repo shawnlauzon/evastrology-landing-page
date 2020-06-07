@@ -47,7 +47,7 @@ module.exports = {
         // Defines where to place the tracking script - `true` in the head and `false` in the body
         head: true,
         // Setting this parameter is optional
-        anonymize: true,
+        anonymize: false,
         // Setting this parameter is also optional
         respectDNT: false,
         // Avoids sending pageview hits from custom paths
@@ -63,7 +63,7 @@ module.exports = {
         // Defers execution of google analytics script after page load
         defer: false,
         // Any additional optional fields
-        sampleRate: 5,
+        // sampleRate: 5,
         siteSpeedSampleRate: 10,
         cookieDomain: "evastrology.com",
       },
