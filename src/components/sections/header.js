@@ -10,8 +10,8 @@ const Header = () => {
     query {
       file(sourceInstanceName: { eq: "product" }, name: { eq: "fortune-teller" }) {
         childImageSharp {
-          fixed(width: 500, height: 404) {
-            ...GatsbyImageSharpFixed
+          fluid(maxWidth: 1000) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
@@ -61,8 +61,7 @@ const Header = () => {
             </FormSubtitle> */}
           </HeaderTextGroup>
           <ImageWrapper>
-            <StyledImage fixed={data.file.childImageSharp.fixed} />
-            <br />
+            <StyledImage fluid={data.file.childImageSharp.fluid} />
           </ImageWrapper>
         </Flex>
       </Container>
@@ -243,11 +242,7 @@ const ImageWrapper = styled.div`
 
 const StyledImage = styled(Img)`
   width: 500px;
-  @media (max-width: ${props => props.theme.screen.md}) {
-    width: 400px;
-  }
-  @media (max-width: ${props => props.theme.screen.sm}) {
-    width: 300px;
-    display: none;
+  @media (max-width: ${props => props.theme.screen.xs}) {
+    width: 250px;
   }
 `
