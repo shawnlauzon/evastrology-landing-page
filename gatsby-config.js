@@ -3,9 +3,12 @@ module.exports = {
     title: `Eva Astrological Assistant`,
     description: `Let Eva plan your week to align with the stars.`,
     author: `Shawn Lauzon`,
+    twitterHandle: `@AstrologyEva`,
+    url: `https://evastrology.com`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sass`,
     `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-prefetch-google-fonts`,

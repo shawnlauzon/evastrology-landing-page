@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import { OutboundLink } from 'gatsby-plugin-gtag'
+import Share from "../Share.jsx"
 
 import { Container } from "../global"
 
@@ -68,6 +69,16 @@ const Header = () => {
                 <HeaderButton>Early access</HeaderButton>
               </HeaderForm>
             </p>
+            <Share
+              socialConfig={{
+                twitterHandle: `@AstrologyEva`,
+                config: {
+                  url: `https://evastrology.com`,
+                  title: `Tell us about your work challenges and receive an astrology ebook for FREE!`,
+                },
+              }}
+              tags={[`astrology`, `noprocrastination`]}
+            />            
 
             {/* <FormSubtitle>
               Already have a beta account?{" "}
