@@ -29,13 +29,14 @@ module.exports = {
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
+      // See https://web.dev/add-manifest/
       options: {
         name: `Eva Astrology`,
         short_name: `EVAstrology`,
         start_url: `/`,
         background_color: `#80DEEA`,
         theme_color: `#80DEEA`,
-        display: `minimal-ui`,
+        display: `browser`,
         icon: `src/images/icon.jpeg`,
       },
     },
