@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
+import { OutboundLink } from 'gatsby-plugin-gtag'
 
 import { Container } from "../global"
 
@@ -40,9 +41,9 @@ const Header = () => {
               Fill out this 5 minute survey to help us build the best product
               for you. 
 
-              <a class="button" target="_blank" href="https://forms.gle/BDJrEXNSHjv2KRkv7?hl=en">
+              <OutboundLink class="button" target="_blank" href="https://forms.gle/BDJrEXNSHjv2KRkv7?hl=en">
                 <CenterButton>Share your challenges</CenterButton>
-              </a>
+              </OutboundLink>
             </p>
 
             <p>

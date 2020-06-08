@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Eva Astrological Assistant`,
-    description: `Eva can help you plan your week according to astrological principles`,
+    description: `Let Eva plan your week to align with the stars.`,
     author: `Shawn Lauzon`,
   },
   plugins: [
@@ -41,33 +41,15 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-gtag`,
       options: {
-        // The property ID; the tracking code won't be generated without it
-        trackingId: "UA-162519236-1",
-        // Defines where to place the tracking script - `true` in the head and `false` in the body
+        // your google analytics tracking id
+        trackingId: `UA-162519236-1`,
+        // Puts tracking script in the head instead of the body
         head: true,
-        // Setting this parameter is optional
+        // enable ip anonymization
         anonymize: false,
-        // Setting this parameter is also optional
-        respectDNT: false,
-        // Avoids sending pageview hits from custom paths
-        exclude: ["/preview/**", "/do-not-track/me/too/"],
-        // Delays sending pageview hits on route update (in milliseconds)
-        pageTransitionDelay: 0,
-        // Enables Google Optimize using your container Id
-        optimizeId: "YOUR_GOOGLE_OPTIMIZE_TRACKING_ID",
-        // Enables Google Optimize Experiment ID
-        experimentId: "YOUR_GOOGLE_EXPERIMENT_ID",
-        // Set Variation ID. 0 for original 1,2,3....
-        variationId: "YOUR_GOOGLE_OPTIMIZE_VARIATION_ID",
-        // Defers execution of google analytics script after page load
-        defer: false,
-        // Any additional optional fields
-        // sampleRate: 5,
-        siteSpeedSampleRate: 10,
-        cookieDomain: "evastrology.com",
-      },
+      },    
     },    
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
