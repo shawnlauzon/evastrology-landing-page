@@ -18,9 +18,9 @@ const Header = () => {
     }
   `)
 
-  const handleSubmit = event => {
-    event.preventDefault()
-  }
+  // const handleSubmit = event => {
+  //   event.preventDefault()
+  // }
 
   return (
     <HeaderWrapper id="top">
@@ -32,10 +32,8 @@ const Header = () => {
               Say hi to Eva,<br />
               your personal astrological assistant
             </h1>
-            <h2>
-              Eva can help you plan your week according to astrological principles.
-            </h2>
-            <h3>Stop procrastinating and start doing.</h3>
+            <h2>Let Eva plan your week to align with the stars.</h2>
+            <h3>Stop procrastinating and start doing</h3>
 
             <h2>Eva will arrive in July 2020.</h2>
             <HeaderForm
