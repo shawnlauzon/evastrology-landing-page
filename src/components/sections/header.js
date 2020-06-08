@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { graphql, useStaticQuery/*, Link*/ } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 
 import { Container } from "../global"
@@ -33,27 +33,40 @@ const Header = () => {
               your personal astrological assistant
             </h1>
             <h2>Let Eva plan your week to align with the stars.</h2>
-            <h3>Stop procrastinating and start doing</h3>
+            {/* <h3>Stop procrastinating and start doing</h3> */}
 
-            <h2>Eva will arrive in July 2020.</h2>
-            <HeaderForm
-              name="early-access"
-              method="post"
-              data-netlify-honeypot="bot-field"
-              data-netlify="true"
-            >
-              <input type="hidden" name="bot-field" />
-              <input type="hidden" name="form-name" value="early-access" />
-              <HeaderInputName placeholder="Your first name" name="first_name" id="first_name" required />
-              <HeaderInputEmail
-                type="email"
-                placeholder="Your email"
-                name="email"
-                id="email"
-                required
-              />
-              <HeaderButton>Early access</HeaderButton>
-            </HeaderForm>
+            <p>
+              We want to know your challenges and how you overcome them. 
+              Fill out this 5 minute survey to help us build the best product
+              for you. 
+
+              <a class="button" target="_blank" href="https://forms.gle/BDJrEXNSHjv2KRkv7?hl=en">
+                <CenterButton>Share your challenges</CenterButton>
+              </a>
+            </p>
+
+            <p>
+              or enter your email and be notified when the early version is available:
+
+              <HeaderForm
+                name="early-access"
+                method="post"
+                data-netlify-honeypot="bot-field"
+                data-netlify="true"
+              >
+                <input type="hidden" name="bot-field" />
+                <input type="hidden" name="form-name" value="early-access" />
+                <HeaderInputName placeholder="Your first name" name="first_name" id="first_name" required />
+                <HeaderInputEmail
+                  type="email"
+                  placeholder="Your email"
+                  name="email"
+                  id="email"
+                  required
+                />
+                <HeaderButton>Early access</HeaderButton>
+              </HeaderForm>
+            </p>
 
             {/* <FormSubtitle>
               Already have a beta account?{" "}
@@ -113,7 +126,13 @@ const HeaderTextGroup = styled.div`
   }  
 
   p {
-    margin-bottom: 48px;
+    margin: 24px;
+  }
+
+  a.button{
+    text-decoration: none;
+    margin:0 auto;
+    display:block;
   }
 `
 
@@ -165,6 +184,7 @@ const HeaderInputName = styled.input`
   border-radius: 4px;
   padding: 8px 16px;
   outline: 0px;
+  margin-right: 5px;
   &:focus {
     box-shadow: inset ${props => props.theme.color.secondary} 0px 0px 0px 2px;
   }
@@ -232,6 +252,37 @@ const HeaderButton = styled.button`
     margin-left: 0;
   }
 `
+
+const CenterButton = styled.button`
+font-weight: 500;
+font-size: 14px;
+color: white;
+letter-spacing: 1px;
+height: 60px;
+display: block;
+margin: auto;
+margin-top: 20px;
+text-transform: uppercase;
+cursor: pointer;
+white-space: nowrap;
+background: ${props => props.theme.color.accent};
+border-radius: 4px;
+padding: 0px 40px;
+border-width: 0px;
+border-style: initial;
+border-color: initial;
+border-image: initial;
+outline: 0px;
+&:hover {
+  box-shadow: rgba(110, 120, 152, 0.22) 0px 2px 10px 0px;
+}
+@media (max-width: ${props => props.theme.screen.md}) {
+}
+@media (max-width: ${props => props.theme.screen.sm}) {
+  margin-left: 0;
+}
+`
+
 const ImageWrapper = styled.div`
   justify-self: end;
   align-self: center;
