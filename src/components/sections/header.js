@@ -39,8 +39,7 @@ const Header = () => {
 
             <p>
               We want to know your challenges and how you overcome them. 
-              Fill out this 5 minute survey to help us build the best product
-              for you. 
+              Fill out this 5 minute survey to be an integral part of developing this new product. 
 
               <OutboundLink class="button" target="_blank" href="https://forms.gle/BDJrEXNSHjv2KRkv7?hl=en">
                 <CenterButton>Share your challenges</CenterButton>
@@ -48,7 +47,7 @@ const Header = () => {
             </p>
 
             <p>
-              or enter your email and be notified when the early version is available:
+              or enter your email and be notified as soon as an early version is available:
 
               <HeaderForm
                 name="early-access"
