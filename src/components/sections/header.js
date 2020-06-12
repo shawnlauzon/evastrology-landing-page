@@ -39,7 +39,7 @@ const Header = () => {
 
             <p>
               We want to know your challenges and how you overcome them. 
-              Fill out this 5 minute survey to be an integral part of developing this new product. 
+              Fill out this 5 minute survey to be an integral part of this new product. 
 
               <OutboundLink class="button" target="_blank" href="https://forms.gle/BDJrEXNSHjv2KRkv7?hl=en">
                 <CenterButton>Share your challenges</CenterButton>
