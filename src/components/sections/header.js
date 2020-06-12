@@ -39,7 +39,7 @@ const Header = () => {
 
             <p>
               We want to know your challenges and how you overcome them. 
-              Fill out this 5 minute survey to be an integral part of this new product.
+              Fill out a 5 minute survey to be an integral part of a brand new app
 
               <OutboundLink class="button" target="_blank" href="https://forms.gle/BDJrEXNSHjv2KRkv7?hl=en">
                 <CenterButton>Share your challenges</CenterButton>
@@ -74,7 +74,7 @@ const Header = () => {
                 config: {
                   url: `https://evastrology.com`,
                   // title: `Tell us about your work challenges and receive an astrology ebook for FREE!`,
-                  title: `Fill out this 5 minute survey to be an integral part of this new product.`,
+                  title: `Fill out a 5 minute survey to become an integral part of a brand new app.`,
                 },
               }}
               tags={[`astrology`, `noprocrastination`]}
