@@ -39,7 +39,7 @@ const Header = () => {
 
             <p>
               We want to know your challenges and how you overcome them. 
-              Fill out this 5 minute survey to be an integral part of this new product. 
+              Fill out this 5 minute survey to be an integral part of this new product.
 
               <OutboundLink class="button" target="_blank" href="https://forms.gle/BDJrEXNSHjv2KRkv7?hl=en">
                 <CenterButton>Share your challenges</CenterButton>
@@ -73,7 +73,8 @@ const Header = () => {
                 twitterHandle: `@AstrologyEva`,
                 config: {
                   url: `https://evastrology.com`,
-                  title: `Tell us about your work challenges and receive an astrology ebook for FREE!`,
+                  // title: `Tell us about your work challenges and receive an astrology ebook for FREE!`,
+                  title: `Fill out this 5 minute survey to be an integral part of this new product.`,
                 },
               }}
               tags={[`astrology`, `noprocrastination`]}
