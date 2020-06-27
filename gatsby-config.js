@@ -7,42 +7,6 @@ module.exports = {
     url: `https://evastrology.com`
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sass`,
-    `gatsby-plugin-styled-components`,
-    {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `Poppins`,
-            variants: [`300`, `400`, `600`, `700`],
-          },
-        ],
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `product`,
-        path: `${__dirname}/src/images/product`,
-      },
-    },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-plugin-manifest`,
-      // See https://web.dev/add-manifest/
-      options: {
-        name: `Eva Astrology`,
-        short_name: `EVAstrology`,
-        start_url: `/`,
-        background_color: `#80DEEA`,
-        theme_color: `#80DEEA`,
-        display: `browser`,
-        icon: `src/images/icon.jpeg`,
-      },
-    },
     {
       resolve: `gatsby-plugin-gtag`,
       options: {
@@ -53,7 +17,58 @@ module.exports = {
         // enable ip anonymization
         anonymize: false,
       },    
+    },      
+    {
+      resolve: `gatsby-plugin-i18n`,
+      options: {
+        langKeyDefault: 'en',
+        langKeyForNull: 'en',
+        prefixDefault: false,
+        useLangKeyLayout: false,
+      }
+    },      
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Eva Astrology`,
+        short_name: `EVAstrology`,
+        start_url: `/`,
+        background_color: `#80DEEA`,
+        theme_color: `#80DEEA`,
+        display: `minimal-ui`,
+        icon: `src/images/eva-icon.jpeg`, // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `cormorant garamond\:400,400i,700,700i`,
+          `fira sans\:300,400`
+          // {
+          //   family: `Vollkorn`,
+          //   variants: [`400`, `700`, `700i`],
+          // },
+          // {
+          //   family: `Raleway`,
+          //   variants: [`500`],
+          // },
+        ],
+      },
     },    
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sass`,    
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images`,
+      },
+    },
+    `gatsby-plugin-styled-components`,
+    `gatsby-transformer-sharp`,
+
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

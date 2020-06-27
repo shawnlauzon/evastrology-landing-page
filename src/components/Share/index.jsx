@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
 	FacebookShareButton,
 	LinkedinShareButton,
@@ -17,7 +17,7 @@ import {
 	WhatsappIcon,
 } from "react-share";  
 
-import './Share.scss';
+import './index.scss';
 
 const Share = ({ socialConfig, tags }) => (
 	<div className="post-social">

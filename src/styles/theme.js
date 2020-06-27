@@ -2,14 +2,9 @@
 
 const theme = {
   font: {
-    primary: `'HK Grotesk Normal'`,
-    secondary: `'HK Grotesk Medium'`,
-    light: `'HK Grotesk Light'`,
-    normal: `'HK Grotesk Normal'`,
-    medium: `'HK Grotesk Medium'`,
-    semibold: `'HK Grotesk Semibold'`,
-    bold: `'HK Grotesk Bold'`,
-    extrabold: `'HK Grotesk Extra Bold'`,
+    primary: `Fira Sans`,
+    bold: `Cormorant Garamond`,
+    normal: `Fira Sans`
   },
   font_size: {
     xxxsmall: "font-size: 12px;",
@@ -19,7 +14,7 @@ const theme = {
     regular: "font-size: 22px; line-height: 30px;",
     large: "font-size: 28px; line-height: 30px;",
     larger: "font-size: 40px; line-height: 50px;",
-    xlarge: "font-size: 48px; line-height: 48px;",
+    xlarge: "font-size: 52px; line-height: 52px;",
   },
 
   color: {

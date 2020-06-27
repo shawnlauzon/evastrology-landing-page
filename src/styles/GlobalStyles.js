@@ -21,11 +21,13 @@ const GlobalStyles = createGlobalStyle`
   h1 {
     ${props => props.theme.font_size.xlarge};
     font-family: ${props => props.theme.font.bold};
-    
+    font-weight: 700;
+    font-style: italic;
   }
 
   h2 {
     ${props => props.theme.font_size.larger};
+    font-weight: 300;
   }
 
   h3 {

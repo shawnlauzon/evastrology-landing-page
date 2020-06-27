@@ -1,41 +1,25 @@
 import React from "react"
-import styled from "styled-components"
-import { graphql, useStaticQuery } from "gatsby"
-import Img from "gatsby-image"
 import { OutboundLink } from 'gatsby-plugin-gtag'
-import Share from "../Share.jsx"
+import styled from "styled-components"
 
-import { Container } from "../global"
+import Container from "../components/container"
+import Layout from "../components/layout"
+import Image from "../components/image"
+import SEO from "../components/seo"
+import Share from "../components/Share"
 
-const Header = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      file(sourceInstanceName: { eq: "product" }, name: { eq: "eva_with_app" }) {
-        childImageSharp {
-          fluid(maxWidth: 1000) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }   
-    }
-  `)
-
-  // const handleSubmit = event => {
-  //   event.preventDefault()
-  // }
-
-  return (
-    <HeaderWrapper id="top">
+const IndexPage = () => (
+  <Layout lang="default">
+    <SEO title="Eva: Your personal astrological assistant" />
+    <IndexPageWrapper id="top">
       <Container>
         <Flex>
-          <HeaderTextGroup>
-            <Subtitle>Astrology</Subtitle>
+          <IndexPageTextGroup>
             <h1>
               Say hi to Eva,<br />
               your personal astrological assistant
             </h1>
             <h2>Let Eva plan your week to align with the stars.</h2>
-            {/* <h3>Stop procrastinating and start doing</h3> */}
 
             <p>
               We want to know your challenges and how you overcome them. 
@@ -48,8 +32,7 @@ const Header = () => {
 
             <p>
               or enter your email and be notified as soon as an early version is available:
-
-              <HeaderForm
+              <IndexPageForm
                 name="early-access"
                 method="post"
                 data-netlify-honeypot="bot-field"
@@ -57,16 +40,16 @@ const Header = () => {
               >
                 <input type="hidden" name="bot-field" />
                 <input type="hidden" name="form-name" value="early-access" />
-                <HeaderInputName placeholder="Your first name" name="first_name" id="first_name" required />
-                <HeaderInputEmail
+                <IndexPageInputName placeholder="Your first name" name="first_name" id="first_name" required />
+                <IndexPageInputEmail
                   type="email"
                   placeholder="Your email"
                   name="email"
                   id="email"
                   required
                 />
-                <HeaderButton>Early access</HeaderButton>
-              </HeaderForm>
+                <IndexPageButton>Early access</IndexPageButton>
+              </IndexPageForm>
             </p>
             <Share
               socialConfig={{
@@ -80,38 +63,28 @@ const Header = () => {
               tags={[`astrology`, `noprocrastination`]}
             />            
 
-            {/* <FormSubtitle>
-              Already have a beta account?{" "}
-              <FormSubtitleLink to="/">Sign in</FormSubtitleLink>
-            </FormSubtitle> */}
-          </HeaderTextGroup>
+          </IndexPageTextGroup>
           <ImageWrapper>
-            <StyledImage fluid={data.file.childImageSharp.fluid} />
+            <Image />
           </ImageWrapper>
         </Flex>
       </Container>
-    </HeaderWrapper>
-  )
-}
+    </IndexPageWrapper>
+  </Layout>
+)
 
-export default Header
+export default IndexPage
 
-const HeaderWrapper = styled.header`
+const IndexPageWrapper = styled.div`
   background-color: #e5f8fb;
-  padding: 160px 0 80px 0;
+  padding: 120px 0 110px 0;
   position: relative;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 5vw));
   @media (max-width: ${props => props.theme.screen.md}) {
   }
 `
-const Subtitle = styled.h5`
-  font-size: 16px;
-  color: ${props => props.theme.color.accent};
-  letter-spacing: 0px;
-  margin-bottom: 16px;
-`
 
-const HeaderTextGroup = styled.div`
+const IndexPageTextGroup = styled.div`
   margin: 0;
 
   > div {
@@ -159,7 +132,7 @@ const Flex = styled.div`
   }
 `
 
-const HeaderForm = styled.form`
+const IndexPageForm = styled.form`
   display: flex;
   flex-direction: row;
   padding-bottom: 16px;
@@ -169,19 +142,7 @@ const HeaderForm = styled.form`
   }
 `
 
-// const FormSubtitle = styled.span`
-//   ${props => props.theme.font_size.xxsmall}
-// `
-
-// const FormSubtitleLink = styled(Link)`
-//   color: ${props => props.theme.color.secondary};
-//   padding-bottom: 1px;
-//   margin-left: 8px;
-//   text-decoration: none;
-//   border-bottom: 1px solid ${props => props.theme.color.secondary};
-// `
-
-const HeaderInputName = styled.input`
+const IndexPageInputName = styled.input`
   font-weight: 500;
   font-size: 16px;
   color: ${props => props.theme.color.primary};
@@ -209,7 +170,7 @@ const HeaderInputName = styled.input`
   }
 `
 
-const HeaderInputEmail = styled.input`
+const IndexPageInputEmail = styled.input`
   font-weight: 500;
   font-size: 16px;
   color: ${props => props.theme.color.primary};
@@ -236,7 +197,7 @@ const HeaderInputEmail = styled.input`
   }
 `
 
-const HeaderButton = styled.button`
+const IndexPageButton = styled.button`
   font-weight: 500;
   font-size: 14px;
   color: white;
@@ -300,12 +261,5 @@ const ImageWrapper = styled.div`
   align-self: center;
   @media (max-width: ${props => props.theme.screen.md}) {
     justify-self: center;
-  }
-`
-
-const StyledImage = styled(Img)`
-  width: 500px;
-  @media (max-width: ${props => props.theme.screen.xs}) {
-    width: 250px;
   }
 `
